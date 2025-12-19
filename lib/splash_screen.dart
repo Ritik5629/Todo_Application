@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:todo_list_curd/home.dart';
 
@@ -11,24 +10,30 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
-  
   @override
-  void initState(){
+  void initState() {
     super.initState();
-
-    Timer(Duration(seconds: 2), (){
-      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HomeScreen()),);
-    }
-    
-    );
+    Timer(const Duration(seconds: 2), () {
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (_) => const HomeScreen()),
+      );
+    });
   }
+
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
       backgroundColor: Colors.blue,
       body: Center(
-        child: Text("Todo App",style: TextStyle(color: Colors.white,fontSize: 28,fontWeight: FontWeight.bold),),
-
+        child: Text(
+          "Todo App",
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 28,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
       ),
     );
   }
